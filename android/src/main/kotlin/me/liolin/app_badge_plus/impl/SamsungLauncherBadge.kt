@@ -8,6 +8,7 @@ import me.liolin.app_badge_plus.util.LauncherTool
 /**
  * Pass
  * 1. Galaxy S6 edge(SM-G9250)  exceed 99, show 99+
+ * 2. Galaxy S22(SM-G9010)  exceed 99, show 99+
  */
 class SamsungLauncherBadge : IBadge {
 

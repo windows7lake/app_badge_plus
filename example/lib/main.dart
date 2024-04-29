@@ -1,5 +1,7 @@
 import 'package:app_badge_plus/app_badge_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +15,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int count = 0;
+
   @override
   void initState() {
     super.initState();
@@ -26,15 +30,74 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on:'),
+          child: TextButton(
+            onPressed: () {
+              allowNotification();
+            },
+            child: const Text('show Notification'),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            AppBadgePlus.updateBadge(2);
+            count += 1;
+            AppBadgePlus.updateBadge(count);
           },
           child: const Icon(Icons.add),
         ),
       ),
     );
+  }
+
+  void allowNotification() async {
+    Permission.notification.request().then((value) {
+      if (value.isGranted) {
+        showNotification();
+      } else {
+        print('Permission is not granted');
+      }
+    });
+  }
+
+  void showNotification() async {
+    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+        FlutterLocalNotificationsPlugin();
+
+    // initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('app_icon');
+    const LinuxInitializationSettings initializationSettingsLinux =
+        LinuxInitializationSettings(defaultActionName: 'Open notification');
+    final DarwinInitializationSettings initializationSettingsDarwin =
+        DarwinInitializationSettings(onDidReceiveLocalNotification:
+            (int id, String? title, String? body, String? payload) {
+      // your call back to the UI
+    });
+    final InitializationSettings initializationSettings =
+        InitializationSettings(
+            android: initializationSettingsAndroid,
+            iOS: initializationSettingsDarwin,
+            macOS: initializationSettingsDarwin,
+            linux: initializationSettingsLinux);
+
+    await flutterLocalNotificationsPlugin.initialize(
+      initializationSettings,
+      onDidReceiveNotificationResponse: (NotificationResponse details) {},
+    );
+
+    const AndroidNotificationDetails androidNotificationDetails =
+        AndroidNotificationDetails(
+      'your channel id',
+      'your channel name',
+      channelDescription: 'your channel description',
+      importance: Importance.max,
+      priority: Priority.high,
+      ticker: 'ticker',
+      number: 1,
+    );
+    const NotificationDetails notificationDetails =
+        NotificationDetails(android: androidNotificationDetails);
+    await flutterLocalNotificationsPlugin.show(
+        0, 'plain title', 'plain body', notificationDetails,
+        payload: 'item x');
   }
 }

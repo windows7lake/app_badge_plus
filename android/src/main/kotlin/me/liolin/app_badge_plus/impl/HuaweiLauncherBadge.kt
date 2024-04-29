@@ -10,6 +10,7 @@ import me.liolin.app_badge_plus.util.LauncherTool
  * PASS
  * 1.Honor8X(JSN-AL00a) 27(8.1.0) exceed 99，show 99+
  * 2.HUAWEI(ANE-AL00) 28(9)
+ * 3.Honor nova 8 SE(JSC-AL50) Harmony OS 3.0.0
  */
 class HuaweiLauncherBadge : IBadge {
     override fun updateBadge(context: Context, count: Int) {
