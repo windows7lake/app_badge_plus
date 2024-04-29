@@ -10,8 +10,7 @@ class MethodChannelAppBadgePlus extends AppBadgePlusPlatform {
   final methodChannel = const MethodChannel('app_badge_plus');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<void> updateBadge(int count) async {
+    await methodChannel.invokeMethod<void>('updateBadge', {'count': count});
   }
 }

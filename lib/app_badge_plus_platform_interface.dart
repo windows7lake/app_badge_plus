@@ -23,7 +23,7 @@ abstract class AppBadgePlusPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<void> updateBadge(int count) {
+    throw UnimplementedError('updateBadge() has not been implemented.');
   }
 }

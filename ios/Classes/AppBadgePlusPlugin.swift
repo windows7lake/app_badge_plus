@@ -7,11 +7,28 @@ public class AppBadgePlusPlugin: NSObject, FlutterPlugin {
     let instance = AppBadgePlusPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
+    
+  public func enableNotification() {
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { accepted, error in
+      if (!accepted) {
+        print("enableNotification failed")
+      }
+    }
+  }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    enableNotification()
     switch call.method {
-    case "getPlatformVersion":
-      result("iOS " + UIDevice.current.systemVersion)
+      case "updateBadge":
+        let args = call.arguments as? Dictionary<String, Any>
+        let count = (args?["count"] as? Int) ?? 0
+        print("count: ", count)
+        if #available(iOS 16.0, *) {
+          UNUserNotificationCenter.current().setBadgeCount(count)
+        } else {
+          UIApplication.shared.applicationIconBadgeNumber = count;
+        }
+        result(nil)
     default:
       result(FlutterMethodNotImplemented)
     }
