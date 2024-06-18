@@ -1,11 +1,11 @@
 name: app_badge_plus
 description: "A Flutter plugin for adding badges to your app icon."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/windows7lake/app_badge_plus
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
- 
+  flutter: '>=1.10.0'
 
 dependencies:
   flutter:
