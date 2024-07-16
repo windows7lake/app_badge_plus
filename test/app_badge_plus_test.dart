@@ -11,6 +11,12 @@ class MockAppBadgePlusPlatform
     // TODO: implement updateBadge
     throw UnimplementedError();
   }
+
+  @override
+  Future<bool> isSupported() {
+    // TODO: implement isSupported
+    throw UnimplementedError();
+  }
 }
 
 void main() {

@@ -27,6 +27,10 @@ object Badge {
     private var iBadge: IBadge? = null
     var notification: Notification? = null
 
+    @Volatile
+    private var isBadgeSupported: Boolean? = null
+    private val badgeSupportedLock = Any()
+
     init {
         BADGES.add(DefaultBadge::class.java)
         BADGES.add(ApexLauncherBadge::class.java)
@@ -45,6 +49,32 @@ object Badge {
 
     fun applyNotification(notification: Notification?) {
         this.notification = notification
+    }
+
+    fun isBadgeSupported(context: Context): Boolean {
+        if (isBadgeSupported == null) {
+            synchronized(badgeSupportedLock) {
+                if (isBadgeSupported == null) {
+                    for (i in 0 until 3) {
+                        try {
+                            Log.i(TAG, "Checking if launcher supports badge, attempt ${i + 1}")
+                            if (initBadge(context)) {
+                                updateBadge(context, 0)
+                                isBadgeSupported = true
+                                Log.i(TAG, "Badge is supported by launcher")
+                                break
+                            } else {
+                                Log.e(TAG, "Failed to initialize badge")
+                                isBadgeSupported = false
+                            }
+                        } catch (e: BadgeException) {
+                            isBadgeSupported = false
+                        }
+                    }
+                }
+            }
+        }
+        return isBadgeSupported ?: false
     }
 
     fun updateBadge(context: Context, count: Int) {

@@ -13,4 +13,9 @@ class MethodChannelAppBadgePlus extends AppBadgePlusPlatform {
   Future<void> updateBadge(int count) async {
     await methodChannel.invokeMethod<void>('updateBadge', {'count': count});
   }
+
+  @override
+  Future<bool> isSupported() async {
+    return (await methodChannel.invokeMethod<bool>('isSupported')) ?? false;
+  }
 }

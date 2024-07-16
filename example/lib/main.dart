@@ -16,10 +16,15 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int count = 0;
+  bool isSupported = false;
 
   @override
   void initState() {
     super.initState();
+    AppBadgePlus.isSupported().then((value) {
+      isSupported = value;
+      setState(() {});
+    });
   }
 
   @override
@@ -30,11 +35,17 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: TextButton(
-            onPressed: () {
-              allowNotification();
-            },
-            child: const Text('show Notification'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('App Badge Plus is supported: $isSupported\n'),
+              TextButton(
+                onPressed: () {
+                  allowNotification();
+                },
+                child: const Text('show Notification'),
+              ),
+            ],
           ),
         ),
         floatingActionButton: FloatingActionButton(

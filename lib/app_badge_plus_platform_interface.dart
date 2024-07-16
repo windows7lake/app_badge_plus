@@ -26,4 +26,8 @@ abstract class AppBadgePlusPlatform extends PlatformInterface {
   Future<void> updateBadge(int count) {
     throw UnimplementedError('updateBadge() has not been implemented.');
   }
+
+  Future<bool> isSupported() {
+    throw UnimplementedError('isSupported() has not been implemented.');
+  }
 }

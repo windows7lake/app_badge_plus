@@ -29,8 +29,10 @@ public class AppBadgePlusPlugin: NSObject, FlutterPlugin {
           UIApplication.shared.applicationIconBadgeNumber = count;
         }
         result(nil)
-    default:
-      result(FlutterMethodNotImplemented)
+      case "isSupported":
+        result(true)
+      default:
+        result(FlutterMethodNotImplemented)
     }
   }
 }

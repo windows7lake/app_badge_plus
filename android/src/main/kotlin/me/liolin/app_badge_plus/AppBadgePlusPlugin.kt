@@ -29,6 +29,9 @@ class AppBadgePlusPlugin: FlutterPlugin, MethodCallHandler {
       val count: Int = args["count"] as Int
       context?.let { Badge.updateBadge(it, count) }
       result.success(null)
+    } else if (call.method == "isSupported") {
+      val isSupported = context?.let { Badge.isBadgeSupported(it) } ?: false
+      result.success(isSupported)
     } else {
       result.notImplemented()
     }
