@@ -1,3 +1,7 @@
+## 1.1.1
+
+* Fix `When generating Privacy Manifest Report getting the following error [ iOS ]`
+
 ## 1.1.0
 
 * add 'isSupport' method to check if the launcher supports the feature
