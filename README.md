@@ -21,11 +21,26 @@ A Flutter plugin for adding badges to your app icon.
 
 ## Mark
 
+### Android
+
 Starting with Android 8.0 (API level 26), notification badges—also known as notification 
 dots—appear on a launcher icon when the associated app has an active notification. Users can 
 touch & hold the app icon to reveal the notifications, along with any app shortcuts.
 
 https://developer.android.com/develop/ui/views/notifications/badges
+
+Starting With Android13 (API level 26), notification runtime permission should be requested before setting app badge.
+
+### iOS
+
+On iOS, notification permission is inneed.
+
+### permission_handler 
+
+Using permission_handler package to manager permission on Android and iOS.
+
+https://pub.dev/packages/permission_handler
+
 
 ## Usage
 
@@ -46,4 +61,58 @@ AppBadgePlus.updateBadge(5);
 
 // Remove badge
 AppBadgePlus.updateBadge(0);
+
+// Whether the launcher support badge, it always return true on iOS, and on Android it will return false if the launcher doesn't support badge.
+AppBadgePlus.isSupported();
 ```
+
+## Compare
+
+### flutter_app_badger
+
+https://pub.dev/packages/flutter_app_badger
+
+#### Set badge
+
+```dart
+FlutterAppBadger.updateBadgeCount(1);
+```
+
+replace to 
+
+
+```dart
+AppBadgePlus.updateBadge(1);
+```
+
+#### Remove badge
+
+```dart
+FlutterAppBadger.removeBadge();
+```
+
+replace to 
+
+
+```dart
+AppBadgePlus.updateBadge(0);
+```
+
+#### Device support
+
+```dart
+FlutterAppBadger.isAppBadgeSupported();
+```
+
+using dart api: 
+
+```dart
+Platform.isAndroid || Platform.isiOS
+```
+
+
+
+
+
+
+

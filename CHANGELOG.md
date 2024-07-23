@@ -1,3 +1,8 @@
+## 1.1.2
+
+* Remove `enableNotification` method in iOS
+* update README.md
+
 ## 1.1.1
 
 * Fix `When generating Privacy Manifest Report getting the following error [ iOS ]`

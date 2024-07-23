@@ -17,10 +17,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int count = 0;
   bool isSupported = false;
+  bool isNotificationAllowed = false;
 
   @override
   void initState() {
     super.initState();
+    allowNotification();
     AppBadgePlus.isSupported().then((value) {
       isSupported = value;
       setState(() {});
@@ -39,11 +41,19 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text('App Badge Plus is supported: $isSupported\n'),
+              Text('Notification permission: $isNotificationAllowed\n'),
               TextButton(
                 onPressed: () {
-                  allowNotification();
+                  showNotification();
                 },
                 child: const Text('show Notification'),
+              ),
+              TextButton(
+                onPressed: () {
+                  count = 0;
+                  AppBadgePlus.updateBadge(0);
+                },
+                child: const Text('clear Notification'),
               ),
             ],
           ),
@@ -60,13 +70,22 @@ class _MyAppState extends State<MyApp> {
   }
 
   void allowNotification() async {
-    Permission.notification.request().then((value) {
-      if (value.isGranted) {
-        showNotification();
-      } else {
-        print('Permission is not granted');
-      }
-    });
+    if (await Permission.notification.isGranted) {
+      isNotificationAllowed = true;
+      setState(() {});
+    } else {
+      await Permission.notification.request().then((value) {
+        if (value.isGranted) {
+          isNotificationAllowed = true;
+          setState(() {});
+          print('Permission is granted');
+        } else {
+          print('Permission is not granted');
+          isNotificationAllowed = false;
+          setState(() {});
+        }
+      });
+    }
   }
 
   void showNotification() async {

@@ -8,16 +8,7 @@ public class AppBadgePlusPlugin: NSObject, FlutterPlugin {
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
     
-  public func enableNotification() {
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { accepted, error in
-      if (!accepted) {
-        print("enableNotification failed")
-      }
-    }
-  }
-
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    enableNotification()
     switch call.method {
       case "updateBadge":
         let args = call.arguments as? Dictionary<String, Any>
