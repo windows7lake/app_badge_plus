@@ -29,15 +29,15 @@ touch & hold the app icon to reveal the notifications, along with any app shortc
 
 https://developer.android.com/develop/ui/views/notifications/badges
 
-Starting With Android13 (API level 26), notification runtime permission should be requested before setting app badge.
+Starting With Android13 (API level 26), notification runtime permission should be requested before setting the app badge.
 
 ### iOS
 
-On iOS, notification permission is inneed.
+On iOS, notification permission is required.
 
 ### permission_handler 
 
-Using permission_handler package to manager permission on Android and iOS.
+Using permission_handler package to manage permission on Android and iOS.
 
 https://pub.dev/packages/permission_handler
 
@@ -48,7 +48,7 @@ To use this plugin, add `app_badge_plus` as a [dependency in your pubspec.yaml f
 
 ```yaml
 dependencies:
-  app_badge_plus: ^1.0.0
+  app_badge_plus: ^1.1.2
 ```
 
 ## Example
@@ -62,7 +62,7 @@ AppBadgePlus.updateBadge(5);
 // Remove badge
 AppBadgePlus.updateBadge(0);
 
-// Whether the launcher support badge, it always return true on iOS, and on Android it will return false if the launcher doesn't support badge.
+// Whether the launcher supports badges. It always returns true on iOS and it will return false on Android if the launcher doesn't support badges.
 AppBadgePlus.isSupported();
 ```
 
@@ -104,7 +104,7 @@ AppBadgePlus.updateBadge(0);
 FlutterAppBadger.isAppBadgeSupported();
 ```
 
-using dart api: 
+using dart API: 
 
 ```dart
 Platform.isAndroid || Platform.isiOS
