@@ -1,3 +1,7 @@
+## 1.1.3
+
+* update README.md (Merge pull request #7 from emilypriddy/patch-1)
+
 ## 1.1.2
 
 * Remove `enableNotification` method in iOS
