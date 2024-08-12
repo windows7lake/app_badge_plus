@@ -1,3 +1,7 @@
+## 1.1.4
+
+* update README.md
+
 ## 1.1.3
 
 * update README.md (Merge pull request #7 from emilypriddy/patch-1)

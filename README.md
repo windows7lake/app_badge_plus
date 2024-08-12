@@ -31,6 +31,32 @@ https://developer.android.com/develop/ui/views/notifications/badges
 
 Starting With Android13 (API level 26), notification runtime permission should be requested before setting the app badge.
 
+Add the following permissions to `AndroidManifest.xml` according to the system you need to support:
+```xml
+<!-- Samsung -->
+<uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+<uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+
+<!-- HTC -->
+<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+<uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+
+<!-- Sony -->
+<uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+<uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"/>
+
+<!-- Apex -->
+<uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+
+<!-- Solid -->
+<uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+
+<!-- Huawei -->
+<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+<uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+<uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+```
+
 ### iOS
 
 On iOS, notification permission is required.
