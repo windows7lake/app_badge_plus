@@ -1,3 +1,7 @@
+## 1.1.5
+
+* update README.md (Merge pull request #9 from amlzq/main Add permission to AndroidManifest)
+
 ## 1.1.4
 
 * update README.md
