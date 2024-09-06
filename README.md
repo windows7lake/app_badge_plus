@@ -29,7 +29,7 @@ touch & hold the app icon to reveal the notifications, along with any app shortc
 
 https://developer.android.com/develop/ui/views/notifications/badges
 
-Starting With Android13 (API level 26), notification runtime permission should be requested before setting the app badge.
+Starting With Android13 (API level 33), notification runtime permission should be requested before setting the app badge.
 
 Add the following permissions to `AndroidManifest.xml` according to the system you need to support:
 ```xml
