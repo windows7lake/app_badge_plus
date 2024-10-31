@@ -6,7 +6,7 @@ A Flutter plugin for adding badges to your app icon.
 ![pixel](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/pixel.png)
 ![samsung](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/samsung.png)
 
-## Supported Platforms``
+## Supported Platforms
 - iOS
 - Android
     - Samsung (pass)
@@ -133,7 +133,9 @@ FlutterAppBadger.isAppBadgeSupported();
 using dart API: 
 
 ```dart
-Platform.isAndroid || Platform.isiOS
+import 'dart:io';
+
+Platform.isAndroid || Platform.isIOS
 ```
 
 
