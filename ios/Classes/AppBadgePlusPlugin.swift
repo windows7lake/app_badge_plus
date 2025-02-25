@@ -14,10 +14,12 @@ public class AppBadgePlusPlugin: NSObject, FlutterPlugin {
         let args = call.arguments as? Dictionary<String, Any>
         let count = (args?["count"] as? Int) ?? 0
         print("count: ", count)
-        if #available(iOS 16.0, *) {
-          UNUserNotificationCenter.current().setBadgeCount(count)
-        } else {
-          UIApplication.shared.applicationIconBadgeNumber = count;
+        DispatchQueue.main.async {
+          if #available(iOS 16.0, *) {
+            UNUserNotificationCenter.current().setBadgeCount(count)
+          } else {
+            UIApplication.shared.applicationIconBadgeNumber = count;
+          }
         }
         result(nil)
       case "isSupported":

@@ -3,14 +3,14 @@ description: "Demonstrates how to use the app_badge_plus plugin."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ^3.0.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  permission_handler: ^11.3.1
-  flutter_local_notifications: ^17.1.0
+  permission_handler: ^11.4.0
+  flutter_local_notifications: ^18.0.1
   app_badge_plus:
     path: ../
 
@@ -20,7 +20,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true

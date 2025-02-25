@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app_badge_plus/app_badge_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -70,6 +72,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void allowNotification() async {
+    if (!Platform.isAndroid && !Platform.isIOS) return;
     if (await Permission.notification.isGranted) {
       isNotificationAllowed = true;
       setState(() {});
@@ -97,17 +100,19 @@ class _MyAppState extends State<MyApp> {
         AndroidInitializationSettings('app_icon');
     const LinuxInitializationSettings initializationSettingsLinux =
         LinuxInitializationSettings(defaultActionName: 'Open notification');
-    final DarwinInitializationSettings initializationSettingsDarwin =
-        DarwinInitializationSettings(onDidReceiveLocalNotification:
-            (int id, String? title, String? body, String? payload) {
-      // your call back to the UI
-    });
-    final InitializationSettings initializationSettings =
+    const DarwinInitializationSettings initializationSettingsDarwin =
+        DarwinInitializationSettings(
+      requestAlertPermission: false,
+      requestBadgePermission: false,
+      requestSoundPermission: false,
+    );
+    const InitializationSettings initializationSettings =
         InitializationSettings(
-            android: initializationSettingsAndroid,
-            iOS: initializationSettingsDarwin,
-            macOS: initializationSettingsDarwin,
-            linux: initializationSettingsLinux);
+      android: initializationSettingsAndroid,
+      iOS: initializationSettingsDarwin,
+      macOS: initializationSettingsDarwin,
+      linux: initializationSettingsLinux,
+    );
 
     await flutterLocalNotificationsPlugin.initialize(
       initializationSettings,
@@ -122,10 +127,16 @@ class _MyAppState extends State<MyApp> {
       importance: Importance.max,
       priority: Priority.high,
       ticker: 'ticker',
-      number: 1,
+      number: 0,
+      channelShowBadge: false,
     );
-    const NotificationDetails notificationDetails =
-        NotificationDetails(android: androidNotificationDetails);
+    const DarwinNotificationDetails darwinNotificationDetails =
+        DarwinNotificationDetails(badgeNumber: 1);
+    const NotificationDetails notificationDetails = NotificationDetails(
+      android: androidNotificationDetails,
+      iOS: darwinNotificationDetails,
+      macOS: darwinNotificationDetails,
+    );
     await flutterLocalNotificationsPlugin.show(
         0, 'plain title', 'plain body', notificationDetails,
         payload: 'item x');
