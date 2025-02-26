@@ -1,6 +1,6 @@
 # app_badge_plus
 
-A Flutter plugin for adding badges to your app icon.
+A Flutter plugin for adding badges to your app icon. Supports iOS, Android, and macOS.
 
 ![iOS](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/iOS.png)
 ![pixel](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/pixel.png)
