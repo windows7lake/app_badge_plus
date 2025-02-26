@@ -5,6 +5,7 @@ A Flutter plugin for adding badges to your app icon.
 ![iOS](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/iOS.png)
 ![pixel](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/pixel.png)
 ![samsung](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/samsung.png)
+![macOS](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/macos.png)
 
 ## Supported Platforms
 - iOS
@@ -18,6 +19,7 @@ A Flutter plugin for adding badges to your app icon.
     - Sony
     - HTC
     - ZTX
+- macOS
 
 ## Mark
 
@@ -59,7 +61,11 @@ Add the following permissions to `AndroidManifest.xml` according to the system y
 
 ### iOS
 
-On iOS, notification permission is required.
+On iOS, when using with notification message, notification permission is required.
+
+### macOS
+
+On macOS, when using with notification message, notification permission is required.
 
 ### permission_handler 
 

@@ -21,6 +21,9 @@ class _MyAppState extends State<MyApp> {
   bool isSupported = false;
   bool isNotificationAllowed = false;
 
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+
   @override
   void initState() {
     super.initState();
@@ -72,29 +75,40 @@ class _MyAppState extends State<MyApp> {
   }
 
   void allowNotification() async {
-    if (!Platform.isAndroid && !Platform.isIOS) return;
-    if (await Permission.notification.isGranted) {
-      isNotificationAllowed = true;
-      setState(() {});
-    } else {
-      await Permission.notification.request().then((value) {
-        if (value.isGranted) {
-          isNotificationAllowed = true;
-          setState(() {});
-          print('Permission is granted');
-        } else {
-          print('Permission is not granted');
-          isNotificationAllowed = false;
-          setState(() {});
-        }
-      });
+    if (Platform.isAndroid && Platform.isIOS) {
+      if (await Permission.notification.isGranted) {
+        isNotificationAllowed = true;
+        setState(() {});
+      } else {
+        await Permission.notification.request().then((value) {
+          if (value.isGranted) {
+            isNotificationAllowed = true;
+            setState(() {});
+            print('Permission is granted');
+          } else {
+            print('Permission is not granted');
+            isNotificationAllowed = false;
+            setState(() {});
+          }
+        });
+      }
+    } else if (Platform.isMacOS) {
+      requestMacOSPermission();
     }
   }
 
-  void showNotification() async {
-    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-        FlutterLocalNotificationsPlugin();
+  void requestMacOSPermission() async {
+    await flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+            MacOSFlutterLocalNotificationsPlugin>()
+        ?.requestPermissions(
+          alert: true,
+          badge: true,
+          sound: true,
+        );
+  }
 
+  void showNotification() async {
     // initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('app_icon');

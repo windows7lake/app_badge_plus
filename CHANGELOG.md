@@ -1,3 +1,8 @@
+## 1.2.0
+
+* Updates minimum supported SDK version to Flutter 3.10.0/Dart 3.0.
+* Add badges support for macos
+
 ## 1.1.6
 
 * update README.md

@@ -27,5 +27,5 @@ flutter:
         pluginClass: AppBadgePlusPlugin
       ios:
         pluginClass: AppBadgePlusPlugin
-#      macos:
-#        pluginClass: AppBadgePlusPlugin
+      macos:
+        pluginClass: AppBadgePlusPlugin
