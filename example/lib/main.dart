@@ -75,7 +75,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void allowNotification() async {
-    if (Platform.isAndroid && Platform.isIOS) {
+    if (Platform.isAndroid || Platform.isIOS) {
       if (await Permission.notification.isGranted) {
         isNotificationAllowed = true;
         setState(() {});
@@ -117,7 +117,7 @@ class _MyAppState extends State<MyApp> {
     const DarwinInitializationSettings initializationSettingsDarwin =
         DarwinInitializationSettings(
       requestAlertPermission: false,
-      requestBadgePermission: false,
+      requestBadgePermission: true,
       requestSoundPermission: false,
     );
     const InitializationSettings initializationSettings =
@@ -141,8 +141,8 @@ class _MyAppState extends State<MyApp> {
       importance: Importance.max,
       priority: Priority.high,
       ticker: 'ticker',
-      number: 0,
-      channelShowBadge: false,
+      number: 1,
+      channelShowBadge: true,
     );
     const DarwinNotificationDetails darwinNotificationDetails =
         DarwinNotificationDetails(badgeNumber: 1);
