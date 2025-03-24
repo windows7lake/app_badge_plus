@@ -1,3 +1,8 @@
+## 1.2.1
+
+* fixed: permission request failed.
+* fixed: Fails the android test #18
+
 ## 1.2.0
 
 * Updates minimum supported SDK version to Flutter 3.10.0/Dart 3.0.
