@@ -15,13 +15,13 @@ import org.mockito.Mockito
 
 internal class AppBadgePlusPluginTest {
   @Test
-  fun onMethodCall_getPlatformVersion_returnsExpectedValue() {
+  fun onMethodCall_isSupported_returnsExpectedValue() {
     val plugin = AppBadgePlusPlugin()
 
-    val call = MethodCall("getPlatformVersion", null)
+    val call = MethodCall("updateBadge", mapOf("count" to 1))
     val mockResult: MethodChannel.Result = Mockito.mock(MethodChannel.Result::class.java)
     plugin.onMethodCall(call, mockResult)
 
-    Mockito.verify(mockResult).success("Android " + android.os.Build.VERSION.RELEASE)
+    Mockito.verify(mockResult).success(null)
   }
 }
