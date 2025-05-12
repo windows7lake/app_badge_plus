@@ -11,6 +11,9 @@ import android.os.Looper
 import me.liolin.app_badge_plus.badge.IBadge
 import me.liolin.app_badge_plus.util.LauncherTool
 
+import androidx.annotation.Keep;
+
+@Keep
 class SonyLauncherBadge : IBadge {
     companion object {
         private const val INTENT_ACTION = "com.sonyericsson.home.action.UPDATE_BADGE"

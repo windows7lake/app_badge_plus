@@ -5,6 +5,9 @@ import android.content.Intent
 import me.liolin.app_badge_plus.badge.IBadge
 import me.liolin.app_badge_plus.util.LauncherTool
 
+import androidx.annotation.Keep;
+
+@Keep
 /**
  * Pass
  * 1. Galaxy S6 edge(SM-G9250)  exceed 99, show 99+

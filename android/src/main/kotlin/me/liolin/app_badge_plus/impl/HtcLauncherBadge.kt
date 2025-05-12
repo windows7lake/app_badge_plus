@@ -7,6 +7,9 @@ import me.liolin.app_badge_plus.badge.IBadge
 import me.liolin.app_badge_plus.util.BroadcastTool
 import me.liolin.app_badge_plus.util.LauncherTool
 
+import androidx.annotation.Keep;
+
+@Keep
 class HtcLauncherBadge : IBadge {
 
     companion object {

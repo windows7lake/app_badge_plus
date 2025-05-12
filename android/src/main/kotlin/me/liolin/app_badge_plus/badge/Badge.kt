@@ -20,6 +20,9 @@ import me.liolin.app_badge_plus.impl.YandexLauncherBadge
 import me.liolin.app_badge_plus.impl.ZTELauncherBadge
 import me.liolin.app_badge_plus.util.LauncherTool
 
+import androidx.annotation.Keep;
+
+@Keep
 object Badge {
 
     private const val TAG = "Badge"

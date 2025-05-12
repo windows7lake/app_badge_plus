@@ -7,6 +7,9 @@ import android.os.Build
 import android.util.Log
 import me.liolin.app_badge_plus.badge.BadgeException
 
+import androidx.annotation.Keep;
+
+@Keep
 object BroadcastTool {
     private const val TAG = "Badge"
 
