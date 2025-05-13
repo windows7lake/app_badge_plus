@@ -1,3 +1,8 @@
+## 1.2.2
+
+* fixed: Badge counter stops updating with minifyEnabled true on Android (Merge pull request #22 from waleedf112/main)
+* feat: add support for Asus Launcher
+
 ## 1.2.1
 
 * fixed: permission request failed.
