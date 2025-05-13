@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.ResolveInfo
 import android.util.Log
 import me.liolin.app_badge_plus.impl.ApexLauncherBadge
+import me.liolin.app_badge_plus.impl.AsusLauncherBadge
 import me.liolin.app_badge_plus.impl.DefaultBadge
 import me.liolin.app_badge_plus.impl.HtcLauncherBadge
 import me.liolin.app_badge_plus.impl.HuaweiLauncherBadge
@@ -37,6 +38,7 @@ object Badge {
     init {
         BADGES.add(DefaultBadge::class.java)
         BADGES.add(ApexLauncherBadge::class.java)
+        BADGES.add(AsusLauncherBadge::class.java)
         BADGES.add(HtcLauncherBadge::class.java)
         BADGES.add(HuaweiLauncherBadge::class.java)
         BADGES.add(LGLauncherBadge::class.java)
