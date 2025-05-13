@@ -6,6 +6,9 @@ import android.os.Bundle
 import me.liolin.app_badge_plus.badge.IBadge
 import me.liolin.app_badge_plus.util.LauncherTool
 
+import androidx.annotation.Keep;
+
+@Keep
 /**
  * PASS
  * 1.Honor8X(JSN-AL00a) 27(8.1.0) exceed 99，show 99+

@@ -8,7 +8,9 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import me.liolin.app_badge_plus.badge.Badge
 
+import androidx.annotation.Keep;
 
+@Keep
 /** AppBadgePlusPlugin */
 class AppBadgePlusPlugin : FlutterPlugin, MethodCallHandler {
     /// The MethodChannel that will the communication between Flutter and native Android

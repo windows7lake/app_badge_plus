@@ -5,6 +5,9 @@ import android.content.Intent
 import me.liolin.app_badge_plus.badge.IBadge
 import me.liolin.app_badge_plus.util.LauncherTool
 
+import androidx.annotation.Keep;
+
+@Keep
 class VivoLauncherBadge : IBadge {
 
     companion object {

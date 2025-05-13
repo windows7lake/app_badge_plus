@@ -8,6 +8,9 @@ import android.content.pm.ResolveInfo
 import android.util.Log
 import java.util.Collections
 
+import androidx.annotation.Keep;
+
+@Keep
 object LauncherTool {
     private const val TAG = "Badge"
 

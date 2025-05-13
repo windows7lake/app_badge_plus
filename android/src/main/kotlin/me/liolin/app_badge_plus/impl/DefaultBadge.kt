@@ -3,6 +3,9 @@ package me.liolin.app_badge_plus.impl
 import android.content.Context
 import me.liolin.app_badge_plus.badge.IBadge
 
+import androidx.annotation.Keep;
+
+@Keep
 class DefaultBadge : IBadge {
 
     override fun updateBadge(context: Context, count: Int) {

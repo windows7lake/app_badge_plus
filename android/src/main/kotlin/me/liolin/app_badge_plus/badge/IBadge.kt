@@ -2,6 +2,9 @@ package me.liolin.app_badge_plus.badge
 
 import android.content.Context
 
+import androidx.annotation.Keep;
+
+@Keep
 interface IBadge {
 
     /**

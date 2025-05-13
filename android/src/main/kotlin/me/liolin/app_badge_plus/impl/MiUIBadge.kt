@@ -7,6 +7,9 @@ import android.util.Log
 import me.liolin.app_badge_plus.badge.Badge
 import me.liolin.app_badge_plus.badge.IBadge
 
+import androidx.annotation.Keep;
+
+@Keep
 class MiUIBadge : IBadge {
     override fun updateBadge(context: Context, count: Int) {
         if (Badge.notification == null) return

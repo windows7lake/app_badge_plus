@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import me.liolin.app_badge_plus.badge.IBadge
 
+import androidx.annotation.Keep;
+
+@Keep
 class OPPOLauncherBadge : IBadge {
 
     companion object {
