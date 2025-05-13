@@ -1,3 +1,7 @@
+## 1.2.3
+
+* feat: Add support to Swift Package Manager
+
 ## 1.2.2
 
 * fixed: Badge counter stops updating with minifyEnabled true on Android (Merge pull request #22 from waleedf112/main)
