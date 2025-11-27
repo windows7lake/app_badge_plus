@@ -17,7 +17,7 @@ App badge plugin for Flutter, use this plugin to set the app badge number on iOS
   s.source           = { :http => 'https://github.com/windows7lake/app_badge_plus/tree/main/ios' }
   s.source_files = 'app_badge_plus/Source/app_badge_plus/**/*'
 
-  s.resource_bundles = {'app_badge_plus_privacy' => ['app_badge_plus/Source/app_badge_plus/Resources/PrivacyInfo.xcprivacy']}
+  s.resource_bundles = {'app_badge_plus_privacy' => ['app_badge_plus/Resources/PrivacyInfo.xcprivacy']}
 
   s.dependency 'Flutter'
 
