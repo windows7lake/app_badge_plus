@@ -1,5 +1,9 @@
 ## 1.2.4
 
+* Upgrade android gradle
+
+## 1.2.4
+
 * fix: Move PrivacyInfo resource file (Merge pull request #26 from AlexVegner/xcode_26_fix)
 
 ## 1.2.3
