@@ -1,4 +1,4 @@
-## 1.2.4
+## 1.2.5
 
 * Upgrade android gradle
 
