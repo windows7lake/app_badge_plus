@@ -1,3 +1,7 @@
+## 1.2.6
+
+* fix: vivo funtouch os no showing badge num
+
 ## 1.2.5
 
 * Upgrade android gradle
