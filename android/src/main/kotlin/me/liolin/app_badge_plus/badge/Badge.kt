@@ -5,9 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ResolveInfo
 import android.util.Log
+import androidx.annotation.Keep
 import me.liolin.app_badge_plus.impl.ApexLauncherBadge
 import me.liolin.app_badge_plus.impl.AsusLauncherBadge
 import me.liolin.app_badge_plus.impl.DefaultBadge
+import me.liolin.app_badge_plus.impl.HiHonorLauncherBadge
 import me.liolin.app_badge_plus.impl.HtcLauncherBadge
 import me.liolin.app_badge_plus.impl.HuaweiLauncherBadge
 import me.liolin.app_badge_plus.impl.LGLauncherBadge
@@ -20,8 +22,6 @@ import me.liolin.app_badge_plus.impl.VivoLauncherBadge
 import me.liolin.app_badge_plus.impl.YandexLauncherBadge
 import me.liolin.app_badge_plus.impl.ZTELauncherBadge
 import me.liolin.app_badge_plus.util.LauncherTool
-
-import androidx.annotation.Keep;
 
 @Keep
 object Badge {
@@ -50,6 +50,7 @@ object Badge {
         BADGES.add(VivoLauncherBadge::class.java)
         BADGES.add(YandexLauncherBadge::class.java)
         BADGES.add(ZTELauncherBadge::class.java)
+        BADGES.add(HiHonorLauncherBadge::class.java)
     }
 
     fun applyNotification(notification: Notification?) {
