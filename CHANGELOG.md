@@ -1,3 +1,7 @@
+## 1.2.7
+
+* feat: add support for HiHonor Launcher
+
 ## 1.2.6
 
 * fix: vivo funtouch os no showing badge num
