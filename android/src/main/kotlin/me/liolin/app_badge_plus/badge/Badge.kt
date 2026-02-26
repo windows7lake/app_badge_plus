@@ -10,6 +10,7 @@ import me.liolin.app_badge_plus.impl.AsusLauncherBadge
 import me.liolin.app_badge_plus.impl.DefaultBadge
 import me.liolin.app_badge_plus.impl.HtcLauncherBadge
 import me.liolin.app_badge_plus.impl.HuaweiLauncherBadge
+import me.liolin.app_badge_plus.impl.HihonorLauncherBadge
 import me.liolin.app_badge_plus.impl.LGLauncherBadge
 import me.liolin.app_badge_plus.impl.MiUIBadge
 import me.liolin.app_badge_plus.impl.NowaLauncherBadge
@@ -41,6 +42,7 @@ object Badge {
         BADGES.add(AsusLauncherBadge::class.java)
         BADGES.add(HtcLauncherBadge::class.java)
         BADGES.add(HuaweiLauncherBadge::class.java)
+        BADGES.add(HihonorLauncherBadge::class.java)
         BADGES.add(LGLauncherBadge::class.java)
         BADGES.add(MiUIBadge::class.java)
         BADGES.add(NowaLauncherBadge::class.java)
@@ -136,6 +138,6 @@ object Badge {
             }
         }
 
-        return true
+        return iBadge != null
     }
 }
