@@ -13,7 +13,6 @@ public class AppBadgePlusPlugin: NSObject, FlutterPlugin {
       case "updateBadge":
         let args = call.arguments as? Dictionary<String, Any>
         let count = (args?["count"] as? Int) ?? 0
-        print("count: ", count)
         DispatchQueue.main.async {
           if #available(iOS 16.0, *) {
             UNUserNotificationCenter.current().setBadgeCount(count)
