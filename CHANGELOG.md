@@ -1,3 +1,7 @@
+## 1.2.8
+
+* fix: improve Android launcher detection for Nexus launcher
+
 ## 1.2.7
 
 * feat: add support for HiHonor Launcher

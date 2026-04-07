@@ -5,14 +5,16 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ResolveInfo
 import android.util.Log
+import androidx.annotation.Keep
 import me.liolin.app_badge_plus.impl.ApexLauncherBadge
 import me.liolin.app_badge_plus.impl.AsusLauncherBadge
 import me.liolin.app_badge_plus.impl.DefaultBadge
+import me.liolin.app_badge_plus.impl.HihonorLauncherBadge
 import me.liolin.app_badge_plus.impl.HtcLauncherBadge
 import me.liolin.app_badge_plus.impl.HuaweiLauncherBadge
-import me.liolin.app_badge_plus.impl.HihonorLauncherBadge
 import me.liolin.app_badge_plus.impl.LGLauncherBadge
 import me.liolin.app_badge_plus.impl.MiUIBadge
+import me.liolin.app_badge_plus.impl.NexusLauncherBadge
 import me.liolin.app_badge_plus.impl.NowaLauncherBadge
 import me.liolin.app_badge_plus.impl.OPPOLauncherBadge
 import me.liolin.app_badge_plus.impl.SamsungLauncherBadge
@@ -21,8 +23,6 @@ import me.liolin.app_badge_plus.impl.VivoLauncherBadge
 import me.liolin.app_badge_plus.impl.YandexLauncherBadge
 import me.liolin.app_badge_plus.impl.ZTELauncherBadge
 import me.liolin.app_badge_plus.util.LauncherTool
-
-import androidx.annotation.Keep;
 
 @Keep
 object Badge {
@@ -38,6 +38,7 @@ object Badge {
 
     init {
         BADGES.add(DefaultBadge::class.java)
+        BADGES.add(NexusLauncherBadge::class.java)
         BADGES.add(ApexLauncherBadge::class.java)
         BADGES.add(AsusLauncherBadge::class.java)
         BADGES.add(HtcLauncherBadge::class.java)
@@ -66,6 +67,7 @@ object Badge {
                         try {
                             Log.i(TAG, "Checking if launcher supports badge, attempt ${i + 1}")
                             if (initBadge(context)) {
+                                if (iBadge is NexusLauncherBadge) return false
                                 updateBadge(context, 0)
                                 isBadgeSupported = true
                                 Log.i(TAG, "Badge is supported by launcher")
