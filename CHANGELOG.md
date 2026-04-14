@@ -1,3 +1,7 @@
+## 1.2.9
+
+* fix: missing null check error with Kotlin 2.2.20
+
 ## 1.2.8
 
 * fix: improve Android launcher detection for Nexus launcher

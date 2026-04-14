@@ -66,8 +66,9 @@ object LauncherTool {
             val resolveInfo = resolveList[i]
             val activityInfo = resolveInfo.activityInfo
             Log.d(TAG, "package $i: ${activityInfo.packageName}/${activityInfo.name}")
-            if (activityInfo.packageName == defaultActivityInfo?.packageName &&
-                activityInfo.name == defaultActivityInfo?.name
+            if (defaultActivityInfo != null &&
+                activityInfo.packageName == defaultActivityInfo.packageName &&
+                activityInfo.name == defaultActivityInfo.name
             ) {
                 indexToSwap = i
                 break
