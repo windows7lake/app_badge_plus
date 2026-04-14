@@ -1,5 +1,7 @@
 # app_badge_plus
 
+[![Pub Version](https://img.shields.io/pub/v/app_badge_plus)](https://pub.dev/packages/app_badge_plus) [![Pub Points](https://img.shields.io/pub/points/app_badge_plus)](https://pub.dev/packages/app_badge_plus) [![GitHub](https://img.shields.io/badge/github-app_badge_plus-blue?logo=github)](https://github.com/windows7lake/app_badge_plus)
+
 A Flutter plugin for adding badges to your app icon. Supports iOS, Android, and macOS.
 
 ![iOS](https://raw.githubusercontent.com/windows7lake/app_badge_plus/main/screenshot/iOS.png)
