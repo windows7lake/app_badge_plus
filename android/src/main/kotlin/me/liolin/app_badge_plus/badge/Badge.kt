@@ -65,12 +65,12 @@ object Badge {
                 if (isBadgeSupported == null) {
                     for (i in 0 until 3) {
                         try {
-                            Log.i(TAG, "Checking if launcher supports badge, attempt ${i + 1}")
+                            Log.d(TAG, "Checking if launcher supports badge, attempt ${i + 1}")
                             if (initBadge(context)) {
                                 if (iBadge is NexusLauncherBadge) return false
                                 updateBadge(context, 0)
                                 isBadgeSupported = true
-                                Log.i(TAG, "Badge is supported by launcher")
+                                Log.d(TAG, "Badge is supported by launcher")
                                 break
                             } else {
                                 Log.e(TAG, "Failed to initialize badge")

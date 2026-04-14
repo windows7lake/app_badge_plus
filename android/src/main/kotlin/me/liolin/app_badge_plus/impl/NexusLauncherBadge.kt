@@ -7,7 +7,7 @@ class NexusLauncherBadge : IBadge {
     private val tag = "NexusLauncherBadge"
 
     override fun updateBadge(context: android.content.Context, count: Int) {
-        Log.i(
+        Log.d(
             tag,
             "Nexus Launcher does not support badge count. Please use notification dots instead. " +
                     "Link: https://developer.android.com/training/notify-user/badges"
