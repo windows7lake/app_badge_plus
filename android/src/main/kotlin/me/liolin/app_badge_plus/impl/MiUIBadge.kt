@@ -40,6 +40,7 @@ class MiUIBadge : IBadge {
             "com.miui.miuihome2",
             "com.miui.mihome",
             "com.miui.mihome2",
+            "com.mi.android.globallauncher",
             "com.i.miui.launcher"
         )
     }
