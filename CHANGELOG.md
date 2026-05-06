@@ -1,3 +1,7 @@
+# 1.2.10
+
+fix: Add support for POCO Global Launcher badge detection (Merge pull request #38 from khlebobul/poco_detection)
+
 ## 1.2.9
 
 * fix: missing null check error with Kotlin 2.2.20
