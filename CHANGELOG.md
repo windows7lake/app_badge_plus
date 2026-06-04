@@ -1,3 +1,9 @@
+## 1.3.0
+
+- Breaking change bumped minimum Flutter SDK requirement to 3.32.0 and Dart SDK requirement to 3.8.0
+- Migrates to built-in Kotlin for AGP 9.0+ compatibility.
+- Fixes macOS build warning by narrowing podspec source_files to exclude PrivacyInfo.xcprivacy.
+
 # 1.2.10
 
 fix: Add support for POCO Global Launcher badge detection (Merge pull request #38 from khlebobul/poco_detection)
