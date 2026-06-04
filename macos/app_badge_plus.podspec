@@ -15,7 +15,7 @@ App badge plugin for Flutter, use this plugin to set the app badge number on mac
   s.author           = { 'Lio lin' => 'windows7lake@gmail.com' }
 
   s.source           = { :http => 'https://github.com/windows7lake/app_badge_plus/tree/main/macos' }
-  s.source_files = 'app_badge_plus/Source/app_badge_plus/**/*'
+  s.source_files = 'app_badge_plus/Source/app_badge_plus/**/*.{h,m,mm,swift}'
 
   s.resource_bundles = {'app_badge_plus_privacy' => ['app_badge_plus/Source/app_badge_plus/Resources/PrivacyInfo.xcprivacy']}
 

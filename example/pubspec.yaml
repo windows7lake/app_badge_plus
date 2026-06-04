@@ -9,8 +9,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  permission_handler: ^11.4.0
-  flutter_local_notifications: ^18.0.1
+  permission_handler: ^12.0.3
+  flutter_local_notifications: ^20.1.0
   app_badge_plus:
     path: ../
 

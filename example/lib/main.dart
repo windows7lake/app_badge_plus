@@ -129,7 +129,7 @@ class _MyAppState extends State<MyApp> {
     );
 
     await flutterLocalNotificationsPlugin.initialize(
-      initializationSettings,
+      settings: initializationSettings,
       onDidReceiveNotificationResponse: (NotificationResponse details) {},
     );
 
@@ -152,7 +152,11 @@ class _MyAppState extends State<MyApp> {
       macOS: darwinNotificationDetails,
     );
     await flutterLocalNotificationsPlugin.show(
-        0, 'plain title', 'plain body', notificationDetails,
-        payload: 'item x');
+      id: 0,
+      title: 'plain title',
+      body: 'plain body',
+      notificationDetails: notificationDetails,
+      payload: 'item x',
+    );
   }
 }
