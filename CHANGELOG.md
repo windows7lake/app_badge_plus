@@ -1,20 +1,24 @@
+## 1.3.1
+
+* Fix: Android build with AGP 9 when `android.builtInKotlin=false` by applying `kotlin-android` whenever built-in Kotlin is disabled.
+
 ## 1.3.0
 
-- Breaking change bumped minimum Flutter SDK requirement to 3.32.0 and Dart SDK requirement to 3.8.0
-- Migrates to built-in Kotlin for AGP 9.0+ compatibility.
-- Fixes macOS build warning by narrowing podspec source_files to exclude PrivacyInfo.xcprivacy.
+* Breaking change bumped minimum Flutter SDK requirement to 3.32.0 and Dart SDK requirement to 3.8.0
+* Migrates to built-in Kotlin for AGP 9.0+ compatibility.
+* Fix: macOS build warning by narrowing podspec source_files to exclude PrivacyInfo.xcprivacy.
 
 # 1.2.10
 
-fix: Add support for POCO Global Launcher badge detection (Merge pull request #38 from khlebobul/poco_detection)
+* Fix: Add support for POCO Global Launcher badge detection (Merge pull request #38 from khlebobul/poco_detection)
 
 ## 1.2.9
 
-* fix: missing null check error with Kotlin 2.2.20
+* Fix: missing null check error with Kotlin 2.2.20
 
 ## 1.2.8
 
-* fix: improve Android launcher detection for Nexus launcher
+* Fix: improve Android launcher detection for Nexus launcher
 
 ## 1.2.7
 
@@ -22,7 +26,7 @@ fix: Add support for POCO Global Launcher badge detection (Merge pull request #3
 
 ## 1.2.6
 
-* fix: vivo funtouch os no showing badge num
+* Fix: vivo funtouch os no showing badge num
 
 ## 1.2.5
 
@@ -30,7 +34,7 @@ fix: Add support for POCO Global Launcher badge detection (Merge pull request #3
 
 ## 1.2.4
 
-* fix: Move PrivacyInfo resource file (Merge pull request #26 from AlexVegner/xcode_26_fix)
+* Fix: Move PrivacyInfo resource file (Merge pull request #26 from AlexVegner/xcode_26_fix)
 
 ## 1.2.3
 
@@ -38,13 +42,13 @@ fix: Add support for POCO Global Launcher badge detection (Merge pull request #3
 
 ## 1.2.2
 
-* fixed: Badge counter stops updating with minifyEnabled true on Android (Merge pull request #22 from waleedf112/main)
+* Fix: Badge counter stops updating with minifyEnabled true on Android (Merge pull request #22 from waleedf112/main)
 * feat: add support for Asus Launcher
 
 ## 1.2.1
 
-* fixed: permission request failed.
-* fixed: Fails the android test #18
+* Fix: permission request failed.
+* Fix: Fails the android test #18
 
 ## 1.2.0
 
