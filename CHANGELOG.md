@@ -1,3 +1,7 @@
+## 1.3.2
+
+* fix(ios): place PrivacyInfo.xcprivacy inside SPM target source directory (Merge pull request #42 from qkdflrgs)
+
 ## 1.3.1
 
 * Fix: Android build with AGP 9 when `android.builtInKotlin=false` by applying `kotlin-android` whenever built-in Kotlin is disabled.
