@@ -16,7 +16,7 @@ A Flutter plugin for adding badges to your app icon. Supports iOS, Android, and 
     - Oppo (pass)
     - Vivo (pass)
     - Huawei (pass)
-    - Xiaomi
+    - Xiaomi / POCO (HyperOS)
     - LG
     - Sony
     - HTC
@@ -34,6 +34,10 @@ touch & hold the app icon to reveal the notifications, along with any app shortc
 https://developer.android.com/develop/ui/views/notifications/badges
 
 Starting With Android13 (API level 33), notification runtime permission should be requested before setting the app badge.
+
+On POCO / Xiaomi HyperOS, numeric badges are driven by active notifications (the old
+`extraNotification` API is unavailable). Grant notification permission and enable the numeric
+badge style in system settings.
 
 Add the following permissions to `AndroidManifest.xml` according to the system you need to support:
 ```xml

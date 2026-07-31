@@ -1,35 +1,23 @@
 package me.liolin.app_badge_plus.impl
 
-import android.annotation.SuppressLint
-import android.app.Notification
 import android.content.Context
-import android.util.Log
-import me.liolin.app_badge_plus.badge.Badge
+import androidx.annotation.Keep
 import me.liolin.app_badge_plus.badge.IBadge
+import me.liolin.app_badge_plus.util.NotificationBadgeHelper
 
-import androidx.annotation.Keep;
-
+/**
+ * Xiaomi / Redmi / POCO (MIUI & HyperOS).
+ *
+ * On POCO Global Launcher (`com.mi.android.globallauncher`) / HyperOS the private
+ * `extraNotification` API is gone and `Notification.setNumber` is ignored. The launcher
+ * badge equals the number of active non-ongoing notifications, so we post N notifications
+ * for count N (and cancel them when count is 0).
+ */
 @Keep
 class MiUIBadge : IBadge {
-    override fun updateBadge(context: Context, count: Int) {
-        if (Badge.notification == null) return
-        val notification = Badge.notification!!
-        notificationBadge(count, notification)
-    }
 
-    @SuppressLint("PrivateApi")
-    private fun notificationBadge(count: Int, notification: Notification) {
-        try {
-            val field = notification.javaClass.getDeclaredField("extraNotification")
-            val extraNotification = field[notification]
-            val method = extraNotification.javaClass.getDeclaredMethod(
-                "setMessageCount",
-                Int::class.javaPrimitiveType
-            )
-            method.invoke(extraNotification, count)
-        } catch (e: Exception) {
-            Log.e("Badge", "Unable to update badge for MiUI", e)
-        }
+    override fun updateBadge(context: Context, count: Int) {
+        NotificationBadgeHelper.updateMiuiBadgeHyperOs(context, count)
     }
 
     override fun getSupportLaunchers(): List<String> {

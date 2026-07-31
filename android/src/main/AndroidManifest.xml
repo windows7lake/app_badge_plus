@@ -38,4 +38,7 @@
 
     <!-- Vivo -->
     <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" />
+
+    <!-- Required on Android 13+ for POCO/HyperOS notification-based badges -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 </manifest>

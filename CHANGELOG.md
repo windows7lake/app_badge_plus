@@ -1,3 +1,7 @@
+[Unreleased]
+
+* Fix: POCO / HyperOS (`com.mi.android.globallauncher`) numeric badge count (no `extraNotification` API).
+
 ## 1.3.2
 
 * fix(ios): place PrivacyInfo.xcprivacy inside SPM target source directory (Merge pull request #42 from qkdflrgs)
