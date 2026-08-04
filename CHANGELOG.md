@@ -1,6 +1,6 @@
-[Unreleased]
+## 1.3.3
 
-* Fix: POCO / HyperOS (`com.mi.android.globallauncher`) numeric badge count (no `extraNotification` API).
+* Fix: POCO / HyperOS (`com.mi.android.globallauncher`) numeric badge count (no `extraNotification` API). (Merge pull request #46 from khlebobul/poco_and_hyperos_fix)
 
 ## 1.3.2
 
