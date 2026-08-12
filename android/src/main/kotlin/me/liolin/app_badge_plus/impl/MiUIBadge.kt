@@ -17,7 +17,7 @@ import me.liolin.app_badge_plus.util.NotificationBadgeHelper
 class MiUIBadge : IBadge {
 
     override fun updateBadge(context: Context, count: Int) {
-        NotificationBadgeHelper.updateMiuiBadgeHyperOs(context, count)
+//        NotificationBadgeHelper.updateMiuiBadgeHyperOs(context, count)
     }
 
     override fun getSupportLaunchers(): List<String> {

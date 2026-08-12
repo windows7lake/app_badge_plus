@@ -1,3 +1,7 @@
+## 1.3.4
+
+* Fix: Notification will be triggered multiple times when updateBadge.
+
 ## 1.3.3
 
 * Fix: POCO / HyperOS (`com.mi.android.globallauncher`) numeric badge count (no `extraNotification` API). (Merge pull request #46 from khlebobul/poco_and_hyperos_fix)
