@@ -1,34 +1,7 @@
 group = 'me.liolin.app_badge_plus'
 version = '1.0-SNAPSHOT'
 
-buildscript {
-    ext.kotlin_version = '2.3.0'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.13.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
 apply plugin: 'com.android.library'
-
-def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0] as int
-def builtInKotlin = agpMajor >= 9 &&
-    project.findProperty('android.builtInKotlin')?.toString() != 'false'
-if (!builtInKotlin) {
-    apply plugin: 'kotlin-android'
-}
 
 android {
     namespace = 'me.liolin.app_badge_plus'
