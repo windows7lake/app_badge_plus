@@ -84,9 +84,9 @@ class _MyAppState extends State<MyApp> {
           if (value.isGranted) {
             isNotificationAllowed = true;
             setState(() {});
-            print('Permission is granted');
+            debugPrint('Permission is granted');
           } else {
-            print('Permission is not granted');
+            debugPrint('Permission is not granted');
             isNotificationAllowed = false;
             setState(() {});
           }
