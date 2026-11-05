@@ -1,6 +1,10 @@
+## 1.4.0
+
+* Fix Gradle/Kotlin compatibility for Flutter built-in KGP migration
+
 ## 1.3.5
 
-fix(android): remove trailing space in Honor CHANGE_BADGE permission name. (Merge pull request #48 from shihoyoko:fix/honor-permission-trailing-space)
+* fix(android): remove trailing space in Honor CHANGE_BADGE permission name. (Merge pull request #48 from shihoyoko:fix/honor-permission-trailing-space)
 
 ## 1.3.4
 
